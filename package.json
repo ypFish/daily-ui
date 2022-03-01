@@ -1,0 +1,11 @@
+{
+  "name": "daily-ui",
+  "version": "1.0.0",
+  "description": "daily-ui组件库",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yp",
+  "license": "MIT"
+}
