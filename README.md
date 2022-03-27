@@ -403,7 +403,7 @@ If you just have modified your file and you want to force syncing, click the **S
 
 > **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
 
-## Manage file synchronization
+## Manage files synchronization
 
 Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
 
@@ -442,12 +442,6 @@ StackEdit extends the standard Markdown syntax by adding extra **Markdown extens
 ## SmartyPants
 
 SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
 
 ## KaTeX
