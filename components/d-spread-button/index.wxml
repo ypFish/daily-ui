@@ -1,0 +1,9 @@
+<!-- 展开收缩控制条 -->
+<view class="com-spread-button-box" catchtap="onTap">
+  <view class="spread-bg-line"></view>
+  <view class="spread-button">
+    <text class="button-name" style="color:{{color}}">{{title}}</text>
+    <iconfont class="button-icon {{!loading&&isSpread?'button-icon-spread':''}} {{loading?'circleAns':''}}" name="{{loading?'loadingroll':'you'}}" size="30" color="{{color}}" />
+  </view>
+  <view class="spread-bg-line"></view>
+</view>

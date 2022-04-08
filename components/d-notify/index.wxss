@@ -1,0 +1,46 @@
+.com-notify {
+  position: fixed;
+  max-width: 690rpx;
+  width: 60vw;
+  height: 72rpx;
+  top: 100rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 18rpx;
+  background-color: #16a085;
+  border-radius: 12rpx;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 300ms ease 0s,opacity 300ms ease 0s,visibility 300ms ease 0s;
+}
+.com-notify .tip-icon {
+  width: auto;
+  margin-left: 4rpx;
+  margin-right: 10rpx;
+}
+.com-notify .close-icon {
+  width: auto;
+  margin-right: 8rpx;
+}
+.com-notify .content {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #FFF;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  font-weight: bold;
+}
+.com-notify-show {
+  visibility: visible;
+  transform: translate3d(0, 50%, 0);
+  opacity: 0.9;
+}

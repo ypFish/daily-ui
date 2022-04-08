@@ -1,0 +1,23 @@
+<!-- 导航栏组件 -->
+<view class="com-navigation" style="height:{{navHeight}}px; ">
+  <view class="navbar" style="height:{{navHeight}}px; background-color:{{bgColor}};">
+    <view class="content" style="height:{{menuHeight}}px; left:{{menuLeft}}px; top:{{menuTop}}px; width:{{menuWidth}}px;">
+      <!-- 模拟的胶囊按钮 -->
+      <view class="icon-box" style="width:{{menuIconWidth}}px; height:{{menuHeight}}px; border-radius:{{menuHeight/2}}px; visibility:{{iconShow?'visible':'hidden'}}">
+        <!-- 返回上一页 -->
+        <view class="icon-button" bindtap="goBack" hover-class="icon-button-tap" hover-start-time="10" hover-stay-time="30">
+          <iconfont name="{{loading?'loadingroll':'zuo'}}" size="33" color="{{loading?'#BBB':'#000'}}" class="{{loading?'circleAns':''}}" />
+        </view>
+        <!-- 分割线 -->
+        <view class="seq-line"></view>
+        <!-- 重定向到主页 -->
+        <view class="icon-button" bindtap="goMain" hover-class="icon-button-tap" hover-start-time="10" hover-stay-time="30">
+          <iconfont name="home1" size="39" color="#000" />
+        </view>
+      </view>
+      <text class="title" style="color:{{textColor}}; ">{{title}}</text>
+    </view>
+  </view>
+  <!-- 顶部提示栏 -->
+  <d-placeholder navHeight="{{navHeight}}" />
+</view>

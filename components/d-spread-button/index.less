@@ -1,0 +1,61 @@
+@import "../../common/less/common.less";
+
+//展开控制条
+.com-spread-button-box {
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  .spread-bg-line {
+    flex:1;
+    height: 50%;
+    border-bottom: 1px solid rgba(114, 121, 134, .2);
+  }
+
+  .spread-button{
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding:0 20rpx;
+
+
+    .button-name{
+      .medium-font();
+      color:@greenColor;
+      font-weight: bold;
+    }
+
+    .button-icon{
+      transform: rotate(90deg);
+      display: inline-block;
+      margin-left: 10rpx;
+      transition: transform .3s linear 0s;
+    }
+
+    .button-loading{
+      display: inline-block;
+      margin-left: 10rpx;
+    }
+
+    .button-icon-spread{
+      transform: rotate(270deg);
+    }
+
+    @keyframes circleAns {
+      0%{
+        transform:rotate(0deg)
+      }
+      100%{
+        transform:rotate(720deg)
+      }
+    }
+
+    .circleAns{
+      animation: circleAns 1.6s linear 0s infinite;
+    }
+  }
+}

@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "component": true,
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "line": "./components/line/index"
+  },
+  "styleIsolation": "apply-shared"
 }

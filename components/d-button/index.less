@@ -1,0 +1,66 @@
+@import "../../common/less/common.less";
+
+@keyframes circleAns {
+  0%{
+    transform:rotate(0deg)
+  }
+  100%{
+    transform:rotate(720deg)
+  }
+}
+
+.com-button{
+  display: inline-flex;
+  color:#FFF;
+  background-color: #16A085;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .icon{
+    display: inline-block;
+  }
+
+  .icon-loading{
+    animation: circleAns 2s linear 0s infinite;
+  }
+}
+
+.com-button-tap{
+  opacity: .86;
+  transform: scale(.98,.98);
+}
+
+.button-size-0{
+  padding: 0 20rpx;
+  height: 80rpx;
+  border-radius: @lineBorderRadius;
+  .medium-font();
+
+  .icon{
+    margin-right:8rpx;
+  }
+}
+
+.button-size-1{
+  padding: 0 14rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  .medium-font();
+
+  .icon{
+    margin-right:6rpx;
+  }
+}
+
+.button-size-2{
+  padding: 0 12rpx;
+  height: 54rpx;
+  border-radius: 8rpx;
+  .small-font();
+
+  .icon{
+    margin-right:6rpx;
+  }
+}

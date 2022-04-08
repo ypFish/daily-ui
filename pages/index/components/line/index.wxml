@@ -1,0 +1,28 @@
+<!-- 通用样式定义 -->
+<wxs src="../../../../common/wxs/common.wxs" module="common" />
+
+<!-- 配置行 组件 -->
+<!-- 第一行 -->
+<button class="line" open-type="{{openType}}" catchtap="onTap" hover-class="{{(disable||switchShow)?'':'line-tap'}}" hover-start-time="8" hover-stay-time="60" hover-stop-propagation="true">
+  <view class="line-1">
+    <!-- 标题 -->
+    <view class="title" style="color:{{titleColor||common.blackColor}}">
+      {{title}}
+      <slot name="title"></slot>
+    </view>
+    <!-- 选项内容 -->
+    <view class="option" style="color:{{optionColor||common.greyColor}}"><text class="option-text" wx:if="{{option}}">{{option}}</text>
+      <slot name="option"></slot>
+    </view>
+    <!-- 开关按钮 -->
+    <d-switch wx:if="{{switchShow}}" value="{{switchValue}}" disable="{{disable}}"></d-switch>
+    <!-- 右箭头 -->
+    <iconfont class="rightIcon" wx:if="{{rightIconShow}}" name="you" size="30" color="{{optionColor||common.greyColor}}"></iconfont>
+  </view>
+  <!-- 第二行 -->
+  <view class="line-2" wx:if="{{desc}}" style="color:{{descColor||common.greyColor}}">
+    {{desc}}
+  </view>
+  <!-- 自定义插槽 -->
+  <slot></slot>
+</button>

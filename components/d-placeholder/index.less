@@ -1,0 +1,49 @@
+.com-placeholder {
+  width: 100vw;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20rpx 30rpx;
+
+  .welcome-box {
+    display: flex;
+    align-items: center;
+
+    .word {
+      display: inline-block;
+      background-color: #727986;
+      position: relative;
+      border-radius: 6rpx;
+      margin-right: 20rpx;
+
+      .welcome {
+        font-size: 26rpx;
+        line-height: 44rpx;
+        color: #ffffff;
+        font-weight: bold;
+        margin: 0 14rpx;
+        display: flex;
+        align-items: center;
+      }
+
+      .point-icon {
+        margin-left: 5rpx;
+        margin-right: 5rpx;
+        display: inline-block;
+      }
+    }
+
+    .word:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 10rpx solid rgba(0, 0, 0, 0);
+      border-left-color: #727986;
+      left: 100%;
+      top: 50%;
+      margin-top: -10rpx;
+    }
+  }
+}

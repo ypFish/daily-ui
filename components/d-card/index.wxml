@@ -1,0 +1,96 @@
+<!--components/d-card/index.wxml-->
+<wxs src="../../common/wxs/common.wxs" module="common" />
+<view class="com-card {{(status===0||status===-1)?'com-card-loading':''}} {{status===2?'com-card-empty':''}}">
+  <view class="archor {{archorClz}}" style="top:-{{navHeight}}px"></view>
+  <!-- 头部 -->
+  <view class="head-box {{((status===0||status===-1)&&title==='')?'head-box-loading':''}}  {{gapHidden||status===0?'gap-line-hidden':''}}">
+    <!-- 图标区域 -->
+    <view class="icon-box" catchtap="headTap">
+      <!-- 图标 -->
+      <iconfont class="icon" name="{{iconName}}" size="{{iconSize}}" color="#FFF" style="padding-bottom: {{iconBottom}}rpx;" />
+    </view>
+    <!-- 标题区域 -->
+    <view class="title-box" catchtap="headTap">
+      <!-- 标题 -->
+      <view class="title">
+        <text>{{title}}</text>
+        <!-- 图标 -->
+        <iconfont wx:if="{{from!=='share'}}" class="icon" name="you" size="26" color="{{common.blackColor}}" />
+      </view>
+      <!-- 描述信息 -->
+      <view class="desc">{{status===0?'卡片数据努力加载中…':desc}}</view>
+    </view>
+    <!-- 导航按钮 -->
+    <view class="nav-box" wx:if="{{shareId}}">
+      <button class="nav-share-button" id="{{shareId}}" open-type="share" catchtap="handleShareButtonTap">
+        <iconfont class="button-icon" name="fenxiangx" size="44" color="{{common.greenColor}}" />
+        <text class="button-text">分享</text>
+      </button>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="content-box">
+    <!-- 获取数据失败 -->
+    <block wx:if="{{status===-1}}">
+
+      <!-- 线 -->
+      <view class="loading-line" style="width: 100%;"></view>
+
+      <view class="loading-line" style="width: 80%;"></view>
+
+      <view class="loading-line" style="width: 100%;"></view>
+
+      <view class="loading-line" style="width: 80%;"></view>
+
+      <view class="loading-line" style="width: 100%;"></view>
+
+      <view class="loading-line" style="width: 80%;"></view>
+
+      <!-- 重新加载提示 -->
+      <view class="error-tip">
+        <view class="error-text">
+          <iconfont class="error-icon" name="biaoqing_2" size="32" color="{{common.greenColor}}" />数据加载失败，重试一下~
+        </view>
+        <d-button class="error-button" title="重新加载" catch:onTap="errorButtonTap"></d-button>
+      </view>
+
+    </block>
+    <!-- loading状态 -->
+    <block wx:if="{{status===0}}">
+
+      <!-- 线 -->
+      <view class="loading-line" style="width: 100%;"></view>
+
+      <view class="loading-line" style="width: 80%;"></view>
+
+      <view class="loading-line" style="width: 100%;"></view>
+
+      <view class="loading-line" style="width: 80%;"></view>
+
+      <view class="loading-line" style="width: 100%;"></view>
+
+      <view class="loading-line" style="width: 80%;"></view>
+
+      <!-- 等待提示 -->
+      <view class="loading-tip">
+        <!-- 提示动画 -->
+        <iconfont class="loading-icon" name="taiyang1" size="120" color="{{common.greenColor}}" />
+        <iconfont class="loading-face-icon" name="taiyang" size="90" color="{{['rgba(0,0,0,0)','#FFF','#FFF','#FFF']}}" />
+        <!-- 提示文案 -->
+        <view class="loading-text">
+          加载中…
+        </view>
+      </view>
+
+    </block>
+    <!-- 空数据状态 -->
+    <block wx:if="{{status===2}}">
+      <image class="empty-img" src="{{common.picPath}}base/empty.png" mode="aspectFit"></image>
+      <view class="empty-text">
+        暂无数据
+      </view>
+    </block>
+    <!-- 内容 -->
+    <slot wx:if="{{status===1}}"></slot>
+  </view>
+</view>

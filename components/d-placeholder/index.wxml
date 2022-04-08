@@ -1,0 +1,13 @@
+<!--components/d-placeholder/index.wxml-->
+<!-- 顶部提示栏 -->
+<view class="com-placeholder" style="height:{{navHeight}}px;">
+  <!-- 欢迎引导语 -->
+  <view class="welcome-box">
+    <view class="word">
+      <view class="welcome">点击右上角
+        <iconfont name="diandiandian" class="point-icon" size="36" color="#FFFFFF" />添加我的小程序，方便快速访问
+      </view>
+    </view>
+    <iconfont class="robot" name="taiyang" size="56" color="#727986" />
+  </view>
+</view>

@@ -1,0 +1,194 @@
+/*
+ * @Description: 用于转化显示模块
+ * @Author: yp
+ * @Date: 2021-03-12 23:39:00
+ * @LastEditTime: 2022-02-14 12:09:44
+ * @LastEditors: yp
+ */
+
+/**
+ * @description: 将Date,TimeStamp转化为时间显示格式
+ * @param {*} _date 输入的时间数据
+ * @param {*} _fmt 格式化模式
+ * @return {*}
+ */
+module.exports.dateFormat = function (_date, _fmt) {
+  var date = _date;
+  var fmt = _fmt;
+
+  if (typeof _date === 'string') {
+    date = getDate(date.replace(getRegExp('-', 'g'), '/'))
+  } else if (typeof date === 'number') {
+    date = getDate(date)
+  } else {
+    return '';
+  }
+
+  var o = [{
+      reg: 'M+',
+      value: date.getMonth() + 1
+    },
+    {
+      reg: 'd+',
+      value: date.getDate()
+    },
+    {
+      reg: 'h+',
+      value: (date.getHours() % 12 === 0) ? 12 : date.getHours() % 12
+    },
+    {
+      reg: 'H+',
+      value: date.getHours()
+    },
+    {
+      reg: 'm+',
+      value: date.getMinutes()
+    },
+    {
+      reg: 's+',
+      value: date.getSeconds()
+    },
+    {
+      reg: 'q+',
+      value: Math.floor((date.getMonth() + 3) / 3)
+    },
+    {
+      reg: 'S',
+      value: date.getMilliseconds()
+    }, //毫秒
+  ];
+
+
+  //年
+  var yearRegExp = getRegExp('(y+)');
+  if (yearRegExp.test(fmt)) {
+    fmt = fmt.replace(yearRegExp, function (a) {
+      return date.getFullYear().toString().substring(4 - a.length);
+    });
+  }
+  //星期
+  var weekRegExp = getRegExp('(E+)');
+  if (weekRegExp.test(fmt)) {
+    var week = ['日', '一', '二', '三', '四', '五', '六'];
+    fmt = fmt.replace(weekRegExp, function (a) {
+      return ((a.length > 1) ? (a.length > 2 ? '星期' : '周') : '') + week[date.getDay()];
+    });
+  }
+  for (var i = 0; i < o.length; i++) {
+    var exp = getRegExp('(' + o[i].reg + ')');
+    if (exp.test(fmt)) {
+      fmt = fmt.replace(exp, function (a) {
+        return (a.length === 1) ?
+          (o[i].value) :
+          (('00' + o[i].value).substring(('' + o[i].value).length))
+      });
+    }
+  }
+  return fmt;
+}
+
+/**
+ * @description: 判断一个字符串是否为整数
+ * @param {*} text
+ * @return {*}
+ */
+module.exports.isInt = function (txt) {
+    return getRegExp("^[0-9]*$", "g").test(txt)
+  },
+
+  /**
+   * @description: 使用某个字符串补全字符显示
+   * @param {*} data 要填补的原始字符串
+   * @param {*} maxLength 向前填充位数
+   * @param {*} fillString 填充的字符
+   * @return {*}
+   */
+  module.exports.padStartString = function (data, maxLength = 0, fillString = '0') {
+    data = data.toString();
+
+    while (data.length < maxLength) {
+      data = fillString + data
+    }
+    return data
+  }
+
+/**
+ * @description: 多项列表显示格式化
+ * @param {*} value
+ * @param {*} options
+ * @return {*}
+ */
+module.exports.checkboxString = function (value, options) {
+  if (value.length < 1) {
+    return '未选择'
+  } else if (value.length === 1) {
+    return options[value[0]].label || options[value[0]]
+  } else {
+    return (options[value[0]].label || options[value[0]]) + '…' + value.length + '项'
+  }
+}
+
+/**
+ * @description: 对于location对象格式化为字符串
+ * @param {*} location
+ * @return {*}
+ */
+module.exports.locationFormat = function (location) {
+
+  var tempList = [];
+  // if (location.country) {
+  //   tempList.push(location.country)
+  // }
+  if (location.adm1) {
+    tempList.push(location.adm1)
+  }
+  if (location.adm2 && location.adm2 !== location.adm1 && location.adm2 + '市' !== location.adm1) {
+    tempList.push(location.adm2)
+  }
+  if (location.name && location.name !== location.adm2) {
+    tempList.push(location.name)
+  }
+  if (tempList.length <= 0) {
+    return "";
+  }
+  return tempList.join(' ');
+}
+
+/**
+ * @description: 根据dateId转化为 当地字符串形式，如 20220127转化为：2022年01月27日
+ * @param {*} dateId
+ * @return {*}
+ */
+module.exports.getLocalStringByDateId = function (dateId) {
+  if (!dateId) {
+    return ''
+  }
+  var dateIdString = dateId.toString();
+  return dateIdString.slice(0, 4) + '年' + dateIdString.slice(4, 6) + '月' + dateIdString.slice(-2) + '日';
+}
+
+/**
+ * @description: 根据dateId获取当地字符串，如 20220127:2022年01月27日 周一
+ * @param {*} dateId
+ * @return {*}
+ */
+module.exports.getLocalDescByDateId = function (dateId) {
+
+  var WEEK_CN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
+  if (!dateId) {
+    return ''
+  }
+  var dateIdString = dateId.toString();
+
+  var year = parseInt(dateIdString.slice(0, 4)) || -1
+  var month = parseInt(dateIdString.slice(4, 6)) || -1
+  var day = parseInt(dateIdString.slice(-2)) || -1
+
+  if (year < 0 || month < 0 || day < 0) {
+    return ''
+  }
+  //计算周几
+  var weekCN = WEEK_CN[(getDate(year, month - 1, day).getDay())]
+  return dateIdString.slice(0, 4) + '年' + dateIdString.slice(4, 6) + '月' + dateIdString.slice(-2) + '日 ' + weekCN;
+}

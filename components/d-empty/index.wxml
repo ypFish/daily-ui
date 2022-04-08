@@ -1,0 +1,9 @@
+<!-- 通用样式定义 -->
+<wxs src="../../common/wxs/common.wxs" module="common" />
+
+<!-- 内容空白配置组件 -->
+<view class="com-empty" wx:if="{{show}}">
+  <image class="empty-img" src="{{common.picPath}}base/emptybg.png" mode="aspectFit"></image>
+  <d-button class="empty-button" size="2" title="{{title}}" iconName="{{iconName}}" iconSize="{{iconSize}}"
+    iconPaddingsizeBottom="{{iconPaddingsizeBottom}}" catch:onTap="handleManage" />
+</view>

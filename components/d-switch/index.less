@@ -1,0 +1,55 @@
+/* components/d-switch/index.wxss */
+.com-switch{
+  width: 72rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  position: relative;
+  overflow: hidden;
+  background-color: #959595;
+  transform:translate3d(0,0,0);
+  
+
+  //遮罩
+  .mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    opacity: 0;
+  }
+
+  .mask-ans{
+    transition: opacity 300ms cubic-bezier(0.4, 1, 0.4, 1.35), background-color 200ms cubic-bezier(0.4, 1, 0.4, 1.35);
+  }
+
+  .mask-active{
+    opacity: 1;
+  }
+
+  //圆球
+  .circle{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    left:4rpx;
+    top:4rpx;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+    transform:translate(0,0);
+    
+  }
+
+  .circle-ans{
+    transition: transform .35s cubic-bezier(0.3, 0.3, 0.25, 1.35);
+  }
+
+  .circle-active{
+    transform:translate(36rpx,0);
+  }
+}
+
+.com-switch-disable{
+  opacity: 0.6;
+}

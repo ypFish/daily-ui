@@ -1,0 +1,26 @@
+<!--components/d-coverpage/index.wxml-->
+<view class="com-picker {{ visible ? 'picker-mask-show' : ''}}" catchtouchmove="handleCatchTouchMove" hover-stop-propagation="true" catchtap="onClose">
+
+  <movable-area class="movable-container {{ visible ? 'content-show' : ''}}" catchtap="handleCatchTouchMove">
+    <movable-view damping="30" direction="vertical" class="movable-inner" y="{{y}}" catchtouchend="toucheEnd" bindchange="dragMove">
+      <!-- 标题 -->
+      <view class="header">
+        <!-- 取消按钮 -->
+        <view catchtap="onClose" class="cancel-item" style="color:{{cancelTextColor}}">取消</view>
+        <view class="title">{{title}}</view>
+        <!-- 确认按钮 -->
+        <view catchtap="onConfirm" class="confirm-item" style="color:{{confirmTextColor}}">
+          <iconfont style="visibility:{{loading?'visible':'hidden'}}" name="loadingroll" size="33" color="{{confirmTextColor}}" class="circleAns" />
+          <text style="visibility:{{!loading?'visible':'hidden'}}">确定</text>
+        </view>
+      </view>
+      <!-- 选择器 -->
+      <picker-view class="picker-container" indicator-class="picker-indicator" mask-class="picker-mask" catchtouchmove="handleCatchTouchMove" catchpickstart="pickerStart" catchpickend="pickerEnd" value="{{value}}" bindchange="pickerChanged">
+        <picker-view-column wx:for="{{options}}" wx:for-index="idx" wx:key="idx" wx:for-item="option">
+          <view class="picker-item" wx:for="{{option}}" wx:key="index"><text class="picker-item-text">{{item.label||item}}</text></view>
+        </picker-view-column>
+      </picker-view>
+    </movable-view>
+  </movable-area>
+
+</view>

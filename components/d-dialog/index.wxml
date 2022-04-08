@@ -1,0 +1,12 @@
+<!--components/d-coverpage/index.wxml-->
+<view class="com-dialog {{ visible ? 'dialog-show' : ''}}" catchtouchmove="handleCatchTouchMove" hover-stop-propagation="true" catchtap="onClose">
+
+  <view class="dialog-container {{ visible ? 'dialog-container-show' : ''}}" style="width:{{width}};">
+    <view class="title" style="color:{{titleTextColor}}">
+      <iconfont wx:if="{{iconShow}}" class="icon" name="tishi" size="34" color="{{}}" />
+      {{title}}
+    </view>
+    <view class="cancel-button" catchtap="onClose" style="color:{{cancelTextColor}}">取消</view>
+    <view class="confirm-button" catchtap="onConfirm" style="color:{{confirmTextColor}}">确定</view>
+  </view>
+</view>

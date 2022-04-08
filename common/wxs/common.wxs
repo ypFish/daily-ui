@@ -1,0 +1,42 @@
+/*
+ * @Description: 
+ * @Author: yp
+ * @Date: 2021-03-01 11:17:19
+ * @LastEditTime: 2021-12-27 11:25:10
+ * @LastEditors: yp
+ */
+
+//公共变量
+module.exports = {
+
+  //黑色
+  blackColor: "#444444",
+  //绿色
+  greenColor: "#16A085",
+  //浅绿色
+  lightGreenColor: "rgba(22,160,133,.2)",
+  //红色
+  redColor: "#EC492C",
+  //浅红色
+  lightRedColor: "rgba(236,73,44,.2)",
+  //灰色
+  greyColor: "#727986",
+  //中度灰色
+  mediumGreyColor: "rgba(114,121,134,.5)",
+  //浅灰色
+  lightGreyColor: "rgba(114,121,134,.2)",
+  //背景浅灰色
+  bgGreyColor: "rgba(0,0,0,.05)",
+  //前台背景浅灰色
+  lightBgGreyColor: "rgba(0,0,0,.03)",
+
+
+  //行和弹窗圆角
+  lineBorderRadius: "12rpx",
+  cardBorderRadius: "16rpx",
+
+  //七牛云存储空间
+  picPath: "https://picb2b.qyer.com/b2b/wakereading/"
+  //小程序云存储空间
+  // picPath: "cloud://wakereading-prd-6gyyhwo9ab09dd67.7761-wakereading-prd-6gyyhwo9ab09dd67-1307957463/"
+}

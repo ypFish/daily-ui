@@ -1,0 +1,5 @@
+<!--components/d-button/index.wxml-->
+<button class="com-button button-size-{{size}}" id="{{innerId}}" style="width:{{width?width+'rpx':'auto'}}; color:{{textColor}}; opacity:{{(disable||loading)?0.7:1}}; background-color:{{bgColor+';'}} {{height>0?('height:'+height+'rpx;'):''}}" catchtap="onTap" hover-class="{{(disable||loading)?'':'com-button-tap'}}" hover-start-time="8" hover-stay-time="60" hover-stop-propagation="true" open-type="{{openType}}">
+  <iconfont class="icon {{loading?'icon-loading':''}}" wx:if="{{iconName}}" name="{{loading?'loadingroll':iconName}}" size="{{(loading&&loadingIconSize)?loadingIconSize:iconSize}}" color="{{textColor}}" style="margin-bottom:{{loading&&loadingIconPaddingBottom>=0?loadingIconPaddingBottom+'rpx;':iconPaddingBottom+'rpx;'}} {{!title?'margin-right:0':''}}" />
+  {{title}}
+</button>

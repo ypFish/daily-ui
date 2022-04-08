@@ -1,23 +1,32 @@
 <!--index.wxml-->
+<!-- 导航组件 -->
+<d-navigation title="配置页" loading="{{false}}" />
 <view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <!-- 内容介绍 -->
+  <view class="title-box">
+    <image class="head-icon" src="https://picb2b.qyer.com/b2b/wakereading/daily-ui/dailyUI.png" mode="aspectFit"></image>
+    <view class="title">Daily UI</view>
+    <view class="desc">
+      风格统一，细节丰富，着重用户体验的小程序组件库
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <!-- 组件选项 -->
+  <view class="line-box">
+    <line title="按钮" option="演示" rightIconShow="{{true}}" />
+    <line title="展开按钮" option="演示" rightIconShow="{{true}}" />
+    <line title="开关组件" option="演示" rightIconShow="{{true}}" />
+    <line title="底部弹窗组件" option="演示" rightIconShow="{{true}}" />
+    <line title="全页弹窗组件" option="演示" rightIconShow="{{true}}" />
+    <line title="底部弹窗选择器组件" option="演示" desc="单项多列选择器" rightIconShow="{{true}}" />
+    <line title="底部弹窗列表选择器组件" option="演示" desc="单项单列选择器" rightIconShow="{{true}}" />
+    <line title="底部弹窗多项选择器组件" option="演示" desc="多项单列选择器" rightIconShow="{{true}}" />
+    <line title="底部弹窗日期选择器组件" option="演示" desc="多项单列选择器" rightIconShow="{{true}}" />
+    <line title="对话框组件" option="演示" rightIconShow="{{true}}" />
+    <line title="消息提示框组件" option="演示" rightIconShow="{{true}}" />
+
   </view>
+
+
+
 </view>

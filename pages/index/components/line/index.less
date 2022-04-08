@@ -1,0 +1,56 @@
+@import "../../../../common/less/common.less";
+
+//小程序button有高等级的默认样式，需要改写
+.line:not([size="mini"]) {
+  width: 100%;
+}
+
+.line {
+  .line-block();
+  display: flex;
+  flex-direction: column;
+  color: @greyColor;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  text-align: left;
+
+  .line-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .sline();
+
+    .title {
+      margin-right: 10rpx;
+      flex: 1;
+      .medium-font();
+    }
+
+    .option {
+      .medium-font();
+      width: 64vw;
+
+      .option-text {
+        display: block;
+        .sline();
+        text-align: right;
+      }
+    }
+
+    .rightIcon {
+      display: inline-block;
+      margin-left: 10rpx;
+    }
+  }
+
+  .line-2 {
+    margin-top: 10rpx;
+    .medium-font();
+  }
+}
+
+.line-tap {
+  opacity: 0.86;
+  transform: scale(0.986, 0.986);
+}

@@ -1,0 +1,109 @@
+//颜色变量
+//黑色
+@blackColor: #444444;
+//绿色
+@greenColor: #16a085;
+//浅绿色
+@lightGreenColor: rgba(22, 160, 133, 0.2);
+//红色
+@redColor: #ec492c;
+//浅红色
+@lightRedColor: rgba(236, 73, 44, 0.2);
+//灰色
+@greyColor: #727986;
+//中度灰色（不可用使用）
+@mediumGreyColor: rgba(114, 121, 134, 0.5);
+//浅灰色（线条使用）
+@lightGreyColor: rgba(114, 121, 134, 0.2);
+//背景浅灰色
+@bgGreyColor:rgba(0, 0, 0, 0.05);
+//前台背景浅灰色
+@lightBgGreyColor: rgba(0, 0, 0, 0.03);
+
+//样式混合
+
+//卡片最小高度样式
+@card-min-height: 100rpx;
+
+//单行文本溢出
+.sline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//多行文本溢出
+.mline(@lineNumber: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @lineNumber;
+  overflow: hidden;
+}
+
+//数字字体
+.number-font {
+  letter-spacing: 2rpx;
+  font-family: "Helvetica", "SimSun", "PingFang SC", "Microsoft YaHei";
+}
+
+//卡片标题字体
+.card-title-font {
+  font-size: 33rpx;
+  line-height: 46rpx;
+}
+
+//大字体
+.big-font {
+  font-size: 30rpx;
+  line-height: 44rpx;
+}
+
+//中等字体
+.medium-font {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+//小字体
+.small-font {
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+
+//标签小字体
+.tiny-font {
+  font-size: 20rpx;
+  line-height: 26rpx;
+}
+
+//标签圆角
+@tipBorderRadius: 6rpx;
+//行圆角
+@lineBorderRadius: 12rpx;
+//卡片圆角
+@cardBorderRadius: 16rpx;
+
+//淡灰色背景框
+.line-block {
+  width: 100%;
+  padding: 20rpx;
+  background-color: @bgGreyColor;
+  border-radius: @lineBorderRadius;
+}
+
+//前台浅灰色背景行
+.light-line-block {
+  width: 100%;
+  padding: 20rpx;
+  background-color: @lightBgGreyColor;
+  border-radius: @lineBorderRadius;
+}
+
+//小标签
+.tip-block {
+  white-space: nowrap;
+  display: inline-block;
+  .tiny-font();
+  padding: 5rpx 8rpx;
+  border-radius: @tipBorderRadius;
+}

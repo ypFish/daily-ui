@@ -1,14 +1,29 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "pages": ["pages/index/index"],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "iconfont": "./components/iconfont/iconfont",
+    "d-navigation": "./components/d-navigation/index",
+    "d-switch": "./components/d-switch/index",
+    "d-cover-page": "./components/d-cover-page/index",
+    "d-picker": "./components/d-picker/index",
+    "d-popup": "./components/d-popup/index",
+    "d-date-picker": "./components/d-date-picker/index",
+    "d-checkbox-picker": "./components/d-checkbox-picker/index",
+    "d-list-picker": "./components/d-list-picker/index",
+    "d-notify": "./components/d-notify/index",
+    "d-dialog": "./components/d-dialog/index",
+    "d-card": "./components/d-card/index",
+    "d-button": "./components/d-button/index",
+    "d-spread-button": "./components/d-spread-button/index",
+    "d-placeholder": "./components/d-placeholder/index",
+    "d-empty": "./components/d-empty/index"
+  }
 }

@@ -1,0 +1,6 @@
+<!--components/d-switch/index.wxml-->
+<view class="com-switch {{disable?'com-switch-disable':''}}" bindtap="_handleClick">
+  <view class="mask {{hasInitAns?'mask-ans':''}} {{value?'mask-active':''}}" style="background-color:{{value?color:offColor}}">
+  </view>
+  <view class="circle {{hasInitAns?'circle-ans':''}} {{value?'circle-active':''}}"></view>
+</view>

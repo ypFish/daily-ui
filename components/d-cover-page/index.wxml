@@ -1,0 +1,18 @@
+<!--components/d-coverpage/index.wxml-->
+<view class="com-cover-page {{ visible ? 'com-cover-page-show' : ''}}" hover-stop-propagation="true" catchtouchmove="handleCatchTouchMove" catchtap="handleClick">
+
+  <view class="content {{ visible ? 'content-show' : ''}}" hover-stop-propagation="true">
+    <view class="header" style="height:{{navHeight}}px;">
+      <view class="title-line" style="height:{{menuHeight}}px; left:{{menuLeft}}px; top:{{menuTop}}px; width:{{menuWidth}}px;">
+        <iconfont wx:if="{{allowClose}}" class="icon {{loading?'circleAns':''}}" name="{{loading?'loadingroll':'close1'}}" size="{{loading?32:28}}" color="{{loading?'#BBB':'#000'}}" />
+        <text class="title">{{title}}</text>
+      </view>
+      <view class="close-area" wx:if="{{allowClose}}" hover-stop-propagation="true" catchtap="onClose">
+      </view>
+    </view>
+    <scroll-view class="inner-content" scroll-y="true" style="height: 200rpx;" scroll-anchoring="{{true}}" enhanced="{{true}}" show-scrollbar="{{false}}">
+      <slot></slot>
+    </scroll-view>
+  </view>
+
+</view>

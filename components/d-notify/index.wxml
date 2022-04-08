@@ -1,0 +1,6 @@
+<!--components/d-notify/index.wxml-->
+<view class="com-notify {{visible?'com-notify-show':''}}" style="background-color:{{colorItem[colorType]}}" catchtap="closeNotify">
+  <iconfont class="tip-icon" name="{{iconItem[iconType].name}}" size="{{iconItem[iconType].size}}" color="#FFF" />
+  <view class="content">{{title}}</view>
+  <iconfont class="close-icon" name="close1" size="28" color="#FFF" />
+</view>

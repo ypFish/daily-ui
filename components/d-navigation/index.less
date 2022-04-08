@@ -1,0 +1,65 @@
+.com-navigation {
+  position: relative;
+  width: 100vw;
+  z-index: 50;
+
+  .navbar {
+    width: 100vw;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transform: rotate(0deg);
+
+    .content {
+      position: absolute;
+      display: flex;
+      align-items: center;
+
+      .icon-box {
+        display: flex;
+        border: 1rpx solid rgba(0,0,0,0.1);
+        align-items: center;
+        overflow: hidden;
+
+        .icon-button{
+          flex:1;
+          height: 100%;
+          display: flex;
+          justify-content:center; 
+          align-items: center;
+
+          @keyframes circleAns {
+            0%{
+              transform:rotate(0deg)
+            }
+            100%{
+              transform:rotate(720deg)
+            }
+          }
+
+          .circleAns{
+            animation: circleAns 2s linear 0s infinite;
+          }
+        }
+        .icon-button-tap{
+          background-color: rgba(0,0,0,0.2);
+        }
+
+        .seq-line{
+          width: 1rpx;
+          height: 18px;
+          background-color: rgba(180,180,180,.6);
+        }
+      }
+
+      .title{
+        color: #000;
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+}

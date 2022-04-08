@@ -1,0 +1,30 @@
+<!--components/d-checkbox-picker/index.wxml-->
+<view class="com-list-picker {{ visible ? 'list-picker-mask-show' : ''}}" catchtouchmove="handleCatchTouchMove" hover-stop-propagation="true" catchtap="onClose">
+
+  <movable-area class="movable-container {{ visible ? 'content-show' : ''}}" catchtap="handleCatchTouchMove" style="top:{{propTopRpx}}rpx">
+    <movable-view damping="30" direction="vertical" class="movable-inner" style="height:{{propHeightRpx}}rpx" y="{{y}}" catchtouchend="toucheEnd" bindchange="dragMove" disabled="{{moveDisable}}">
+      <!-- 标题 -->
+      <view class="header">
+        <!-- 取消按钮 -->
+        <view class="title">{{title}}</view>
+        <view catchtap="onClose" class="cancel-item">
+          <iconfont name="close1" size="36" color="{{cancelTextColor}}"></iconfont>
+        </view>
+      </view>
+      <!-- 选择器 -->
+      <scroll-view class="check-line-list" scroll-y="true" scroll-anchoring="true" enhanced="{{true}}" show-scrollbar="{{false}}" style="height:{{lineContainerHeightRpx}}rpx;">
+        <view class="check-line" wx:for="{{options}}" wx:key="index" style="height:{{lineHeightRpx}}rpx;" catchtap="lineSelect" data-idx="{{index}}">
+          <view class="check-line-title" style="color:{{lineTextColor}};">
+            <view style="align-items:{{item.desc?'flex-end':'center'}}" class="title">{{item.title||item}}</view>
+            <view wx:if="{{item.desc!==undefind}}" class="desc">
+              {{item.desc}}
+            </view>
+          </view>
+          <iconfont wx:if="{{showIcon}}" class="right-icon" name="you" size="30" color="{{lineTextColor}}" />
+
+        </view>
+      </scroll-view>
+    </movable-view>
+  </movable-area>
+
+</view>

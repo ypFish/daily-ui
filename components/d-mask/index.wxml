@@ -1,0 +1,9 @@
+<!--components/d-mask/index.wxml-->
+<view
+  class="mask-shadow {{ visible ? 'mask-shadow-show' : ''}}" 
+  hover-class="none" 
+  catchtouchmove="handleCatchTouchMove"
+  hover-stop-propagation="true"
+  catchtap="handleClick"
+  style="{{ maskStyles }}"
+/>

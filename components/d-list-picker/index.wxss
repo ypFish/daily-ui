@@ -1,0 +1,105 @@
+.com-list-picker {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+.com-list-picker .movable-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 30%;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: opacity 300ms,transform 300ms;
+}
+.com-list-picker .movable-container .movable-inner {
+  width: 100%;
+  height: 70%;
+  background-color: #FFF;
+  flex: 1;
+  border-radius: 12rpx 12rpx 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.com-list-picker .movable-container .movable-inner .header {
+  height: 100rpx;
+  border-bottom: 1px solid rgba(114, 121, 134, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  padding: 0 4vw;
+}
+.com-list-picker .movable-container .movable-inner .header .title {
+  flex: 1;
+  font-size: 32rpx;
+}
+.com-list-picker .movable-container .movable-inner .header .cancel-item {
+  line-height: 100rpx;
+}
+.com-list-picker .movable-container .movable-inner .check-line-list {
+  width: 100%;
+  padding: 0 4vw;
+  display: flex;
+  flex-direction: column ;
+}
+.com-list-picker .movable-container .movable-inner .check-line-list .check-line {
+  vertical-align: middle;
+  border-bottom: 1px dashed rgba(114, 121, 134, 0.2);
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.com-list-picker .movable-container .movable-inner .check-line-list .check-line:last-of-type {
+  border-bottom-color: rgba(0, 0, 0, 0);
+}
+.com-list-picker .movable-container .movable-inner .check-line-list .check-line .check-line-title {
+  display: flex;
+  flex: 1 ;
+  height: 100%;
+  margin-left: 2vw;
+  overflow: hidden;
+  flex-direction: column;
+}
+.com-list-picker .movable-container .movable-inner .check-line-list .check-line .check-line-title .title {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.com-list-picker .movable-container .movable-inner .check-line-list .check-line .check-line-title .desc {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+  overflow: hidden;
+  width: 100%;
+  flex: 1;
+  color: #727986;
+}
+.com-list-picker .movable-container .movable-inner .check-line-list .check-line .right-icon {
+  display: inline-block;
+  margin: 0 2vw;
+}
+.com-list-picker .content-show {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.list-picker-mask-show {
+  visibility: visible;
+  opacity: 1;
+}

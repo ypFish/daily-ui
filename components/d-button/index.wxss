@@ -1,0 +1,105 @@
+.sline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.number-font {
+  font-family: "Helvetica", "SimSun", "PingFang SC", "Microsoft YaHei";
+}
+.card-title-font {
+  font-size: 33rpx;
+  line-height: 46rpx;
+}
+.big-font {
+  font-size: 30rpx;
+  line-height: 44rpx;
+}
+.medium-font {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.small-font {
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+.tiny-font {
+  font-size: 20rpx;
+  line-height: 26rpx;
+}
+.line-block {
+  width: 100%;
+  padding: 20rpx;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 12rpx;
+}
+.light-line-block {
+  width: 100%;
+  padding: 20rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 12rpx;
+}
+.tip-block {
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 20rpx;
+  line-height: 26rpx;
+  padding: 5rpx 8rpx;
+  border-radius: 6rpx;
+}
+@keyframes circleAns {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+.com-button {
+  display: inline-flex;
+  color: #FFF;
+  background-color: #16A085;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.com-button .icon {
+  display: inline-block;
+}
+.com-button .icon-loading {
+  animation: circleAns 2s linear 0s infinite;
+}
+.com-button-tap {
+  opacity: 0.86;
+  transform: scale(0.98, 0.98);
+}
+.button-size-0 {
+  padding: 0 20rpx;
+  height: 80rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.button-size-0 .icon {
+  margin-right: 8rpx;
+}
+.button-size-1 {
+  padding: 0 14rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.button-size-1 .icon {
+  margin-right: 6rpx;
+}
+.button-size-2 {
+  padding: 0 12rpx;
+  height: 54rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+.button-size-2 .icon {
+  margin-right: 6rpx;
+}
