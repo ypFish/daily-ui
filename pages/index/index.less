@@ -1,8 +1,71 @@
+@import "../../common/less/common.less";
+
 page {
   position: relative;
   background-color: #fff;
   height: auto;
   padding-bottom: 96rpx;
+}
+
+.cover-page {
+  padding: 20rpx 30rpx;
+  font-weight: bold;
+
+  .title {
+    width: 100%;
+    .medium-font();
+    color: @greyColor;
+  }
+
+  .show-box {
+    margin: 30rpx 0;
+    display: flex;
+    height: 120rpx;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  .article-title {
+    margin-top: 30rpx;
+    .big-font();
+    width: 100%;
+    text-align: center;
+  }
+
+  .article-desc {
+    width: 100%;
+    text-align: center;
+    .medium-font();
+    line-height: 70rpx;
+    overflow: hidden;
+  }
+
+  .article-desc-limit {
+    max-height: 490rpx;
+  }
+
+  .spread-button {
+    display: block;
+    margin-top: 10rpx;
+  }
+}
+
+.popup-page {
+  padding: 20rpx 30rpx;
+  font-weight: bold;
+
+  .popup-title {
+    width: 100%;
+    .big-font();
+    color: @blackColor;
+  }
+
+  .popup-desc {
+    width: 100%;
+    .medium-font();
+    color: @greyColor;
+    margin: 30rpx 0;
+  }
 }
 
 .container {

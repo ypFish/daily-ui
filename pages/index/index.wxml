@@ -1,6 +1,103 @@
 <!--index.wxml-->
+<!-- wxs引用 -->
+<wxs src="../../common/wxs/format.wxs" module="format" />
+<!-- 按钮组件展示页 -->
+<d-cover-page title="按钮组件演示" visible="{{demo===0}}">
+  <view class="cover-page">
+    <view class="title">不同尺寸按钮</view>
+    <view class="show-box">
+      <d-button title="小尺寸按钮" size="2" />
+      <d-button title="中等尺寸按钮" size="1" />
+      <d-button title="大尺寸按钮" size="0" />
+    </view>
+    <view class="title">不同颜色按钮</view>
+    <view class="show-box">
+      <d-button title="红色按钮" size="1" bgColor="#ec492c" textColor="#FFFFFF" />
+      <d-button title="灰色按钮" size="1" bgColor="#727986" textColor="#FFFFFF" />
+      <d-button title="白色按钮" size="1" bgColor="#F0F0F0" textColor="#333333" />
+    </view>
+    <view class="title">自定义尺寸按钮</view>
+    <view class="show-box">
+      <d-button title="超长按钮" size="1" width="520" height="80" />
+      <d-button title="方形按钮" size="1" width="100" height="100" />
+    </view>
+    <view class="title">带图标按钮</view>
+    <view class="show-box">
+      <d-button size="2" title="刷新数据" iconName="shuaxin" iconSize="32" iconPaddingBottom="2" />
+      <d-button size="2" title="删除数据" iconName="jian2" iconSize="18" iconPaddingBottom="4" bgColor="#ec492c" />
+      <d-button size="2" title="添加数据" iconName="jia2" iconSize="20" iconPaddingBottom="4" />
+    </view>
+    <view class="title">不同状态按钮</view>
+    <view class="show-box">
+      <d-button size="1" title="加载状态" iconName="shuaxin" loading="{{true}}" loadingIconSize="26" />
+      <d-button size="1" title="禁用状态" iconName="jian2" iconSize="18" iconPaddingBottom="4" disable="{{true}}" bgColor="#ec492c" />
+    </view>
+  </view>
+</d-cover-page>
+
+<!-- 按钮组件展示页 -->
+<d-cover-page title="展开按钮组件演示" visible="{{demo===1}}">
+  <view class="cover-page">
+    <view class="article-title">《冥想》——穆旦</view>
+    <view class="article-desc {{spread?'':'article-desc-limit'}}">
+      <text>
+        把生命的突泉捧在我手里，
+        我只觉得它来得新鲜，
+        是浓烈的酒，清新的泡沫，
+        注入我的奔波、劳作、冒险。
+        仿佛前人从未经临的园地
+        就要展现在我的面前。
+        但如今，突然面对着坟墓，
+        我冷眼向过去稍稍回顾，
+        只见它曲折灌溉的悲喜
+        都消失在一片亘古的荒漠，
+        这才知道我的全部努力
+        不过完成了普通的生活。
+      </text>
+    </view>
+    <d-spread-button class="spread-button" title="{{spread?'收起':'展开全文'}}" isSpread="{{spread}}" catch:onSpreadButtonTap="handleSpreadButtonTap" loading="{{false}}" />
+  </view>
+</d-cover-page>
+
+<!-- 半页弹窗组件 -->
+<d-popup visible="{{demo===2}}">
+  <view class="popup-page">
+    <view class="popup-title">底部半页弹窗组件演示</view>
+    <view class="popup-desc">* 支持点击空白弹层关闭</view>
+    <view class="popup-desc">* 支持向下滑动关闭</view>
+  </view>
+</d-popup>
+
+<!-- 按钮组件展示页 -->
+<d-cover-page title="全页弹窗演示" visible="{{demo===3}}" loading="{{pageLoading}}">
+  <view class="cover-page">
+    <d-button title="加载状态" size="1" catch:onTap="handleCoverPageLoading"></d-button>
+  </view>
+</d-cover-page>
+
+<!-- 底部弹窗选择器演示 -->
+<d-picker visible="{{demo===4}}" title="弹窗选择器" value="{{pickerValue}}" options="{{pickerOptions}}" catch:onConfirm="handlePickerConfirm"></d-picker>
+
+<!-- 列表选择器 -->
+<d-list-picker visible="{{demo===5}}" options="{{listOptions}}" title="列表选择器" catch:onConfirm="handleListConfirm"></d-list-picker>
+
+<!-- 多选组件 -->
+<d-checkbox-picker visible="{{demo===6}}" options="{{chekboxOptions}}" value="{{chekboxValue}}" title="多项选择器" catch:onConfirm="handleCheckboxConfirm"></d-checkbox-picker>
+
+<!-- 日期选择器 -->
+<d-date-picker visible="{{demo===7}}" title="年月日" catch:onConfirm="handleDatePickerConfirm" startTime="{{startTime}}" endTime="{{endTime}}" valueTime="{{valueTime}}"></d-date-picker>
+
+<!-- 月日模式的 日期选择器 -->
+<d-date-picker visible="{{demo===8}}" title="选择生日" mode="MD" month="{{month}}" day="{{day}}" catch:onConfirm="handleDatePickerMDConfirm"></d-date-picker>
+
+<!-- 对话框组件 -->
+<d-dialog visible="{{dialogShow}}" title="请确认是否提交?" catch:onConfirm="handleDialogConfirm" />
+
+<!-- 通知组件 -->
+<d-notify title="{{notifyTitle}}" visible="{{notifyVisible}}" iconType="{{iconType}}" colorType="{{colorType}}" during="2000" />
+
 <!-- 导航组件 -->
-<d-navigation title="配置页" loading="{{false}}" />
+<d-navigation title="组件库" loading="{{false}}" />
 <view class="container">
   <!-- 内容介绍 -->
   <view class="title-box">
@@ -13,18 +110,18 @@
 
   <!-- 组件选项 -->
   <view class="line-box">
-    <line title="按钮" option="演示" rightIconShow="{{true}}" />
-    <line title="展开按钮" option="演示" rightIconShow="{{true}}" />
-    <line title="开关组件" option="演示" rightIconShow="{{true}}" />
-    <line title="底部弹窗组件" option="演示" rightIconShow="{{true}}" />
-    <line title="全页弹窗组件" option="演示" rightIconShow="{{true}}" />
-    <line title="底部弹窗选择器组件" option="演示" desc="单项多列选择器" rightIconShow="{{true}}" />
-    <line title="底部弹窗列表选择器组件" option="演示" desc="单项单列选择器" rightIconShow="{{true}}" />
-    <line title="底部弹窗多项选择器组件" option="演示" desc="多项单列选择器" rightIconShow="{{true}}" />
-    <line title="底部弹窗日期选择器组件" option="演示" desc="多项单列选择器" rightIconShow="{{true}}" />
-    <line title="对话框组件" option="演示" rightIconShow="{{true}}" />
-    <line title="消息提示框组件" option="演示" rightIconShow="{{true}}" />
-
+    <line title="按钮" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="0" />
+    <line title="展开按钮" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="1" />
+    <line title="开关组件" desc="点击当前行列表开关演示" switchShow="{{true}}" />
+    <line title="底部半页弹窗组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="2" />
+    <line title="全页弹窗组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="3" />
+    <line title="底部弹窗选择器组件" option="{{pickerOptions[0][pickerValue[0]]+pickerOptions[1][pickerValue[1]]}}" desc="单项多列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="4" />
+    <line title="底部弹窗列表选择器组件" option="{{listOptions[listValue].title}}" desc="单项单列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="5" />
+    <line title="底部弹窗多项选择器组件" option="{{format.checkboxString(chekboxValue,chekboxOptions)}}" desc="多项单列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="6" />
+    <line title="底部弹窗日期选择器组件" option="{{format.dateFormat(valueTime,'yyyy年MM月dd日')}}" desc="年月日模式，支持设定范围，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="7" />
+    <line title="底部弹窗日期选择器组件" option="{{format.padStartString(month+1,2,'0')}}月{{format.padStartString(day+1,2,'0')}}日" desc="月日模式，去掉2月29日，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="8" />
+    <line title="对话框组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDialogShow" />
+    <line title="消息提示框组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleNotify" />
   </view>
 
 

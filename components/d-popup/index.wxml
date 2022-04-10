@@ -1,13 +1,9 @@
 <!--components/d-coverpage/index.wxml-->
-<view 
-  class="com-picker {{ visible ? 'mask-show' : ''}}" 
-  catchtouchmove="handleCatchTouchMove"
-  hover-stop-propagation="true"
-  catchtap="onClose">
-  
+<view class="com-picker {{ visible ? 'mask-show' : ''}}" catchtouchmove="handleCatchTouchMove" hover-stop-propagation="true" catchtap="onClose">
+
   <movable-area class="movable-container {{ visible ? 'content-show' : ''}}">
     <movable-view damping="30" direction="vertical" class="movable-inner" y="{{y}}" catchtouchstart="touchStart" catchtouchend="toucheEnd">
-      
+      <slot></slot>
     </movable-view>
   </movable-area>
 
