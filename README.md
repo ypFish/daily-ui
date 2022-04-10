@@ -39,8 +39,8 @@ catch:onTap="handleManage" />
 | 属性                     | 说明                                                   | 类型    | 默认值                 |
 | ------------------------ | ------------------------------------------------------ | ------- | ---------------------- |
 | size                     | 按钮默认尺寸，0:大尺寸，1:中等尺寸，2:小尺寸           | Number  | 0                      |
-| width                    | 强制按钮宽度，缺省为 size 默认宽度                     | Number  | 0                      |
-| height                   | 强制按钮高度，缺省为 size 默认高度                     | Number  | 0                      |
+| width                    | 强制按钮宽度，缺省为 size 默认宽度，单位：rpx          | Number  | 0                      |
+| height                   | 强制按钮高度，缺省为 size 默认高度，单位：rpx          | Number  | 0                      |
 | title                    | 按钮上的文字                                           | String  | ''                     |
 | bgColor                  | 按钮的背景颜色                                         | String  | '#16A085'              |
 | textColor                | 按钮上文字和图标颜色                                   | String  | '#FFFFFF'              |
