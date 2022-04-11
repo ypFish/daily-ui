@@ -4,11 +4,10 @@ Hi，欢迎使用 **Daily-UI** 组件库，**Daily-UI** 应用平台主要是微
 
 <br/>
 演示小程序：DailyUI<br/>
+<br/>
 <img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/code.jpg' width="200" />
 
 <br/>
-
-以下内容基于组件维度，从演示、使用和参数配置角度描述
 
 组件库中如果需要使用图标，需要前置引用：mini-program-iconfont-cli 图标组件库，详细信息：[mini-program-iconfont-cli](https://github.com/iconfont-cli/mini-program-iconfont-cli)
 
@@ -21,6 +20,8 @@ or
 ```
 yarn add mini-program-iconfont-cli --dev
 ```
+
+以下内容基于组件维度，从演示、使用和参数配置角度描述
 
 <br />
 
@@ -128,6 +129,8 @@ catch:onChange="handleSwitchChange">
 | value      | 开关状态                 | Boolean | false     |
 | disable    | 开关按钮是否禁用         | Boolean | false     |
 | hasInitAns | 初始赋值时是否有动画效果 | Boolean | false     |
+
+<br />
 
 ## 顶部导航组件
 
