@@ -2,6 +2,12 @@
 
 Hi，欢迎使用 **Daily-UI** 组件库，**Daily-UI** 应用平台主要是微信小程序端，使用原生 JS 开发，支持：Less、icon-font 的使用，可以配置全局振动反馈。速度还不错，尽可能贴近小程序端使用需求，遵循用户习惯，着重用户体验感，试试吧~
 
+<br/>
+演示小程序：DailyUI<br/>
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/code.jpg' width="200" />
+
+<br/>
+
 以下内容基于组件维度，从演示、使用和参数配置角度描述
 
 组件库中如果需要使用图标，需要前置引用：mini-program-iconfont-cli 图标组件库，详细信息：[mini-program-iconfont-cli](https://github.com/iconfont-cli/mini-program-iconfont-cli)
@@ -21,6 +27,7 @@ yarn add mini-program-iconfont-cli --dev
 ## 按钮组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-button.jpeg' width="300" />
 
 ### 使用
 
@@ -66,6 +73,7 @@ catch:onTap="handleManage" />
 ## 展开按钮组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-spread-button.jpeg' width="300" />
 
 ### 使用
 
@@ -99,6 +107,7 @@ loading="{{loading}}" />
 ## 开关组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-switch.jpeg' width="300" />
 
 ### 使用
 
@@ -123,6 +132,7 @@ catch:onChange="handleSwitchChange">
 ## 顶部导航组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-navigation.jpeg' width="300" />
 
 ### 使用
 
@@ -147,11 +157,12 @@ iconShow="{{false}}" />
 
 <br/>
 
-## 底部弹框组件
+## 底部半页弹框组件
 
 支持 按钮关闭、下滑关闭、点击蒙层关闭，当数据垂直高度超过弹层可视区域，出现滚动条
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-popup.jpeg' width="300" />
 
 ### 使用
 
@@ -179,6 +190,7 @@ visible="{{false}}"  />
 ## 全页弹窗组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-cover-page.jpeg' width="300" />
 
 ### 使用
 
@@ -211,6 +223,7 @@ allowClose="{{allowClose}}">
 ## 底部弹窗选择器组件（单项多列选择）
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-picker.jpeg' width="300" />
 
 ### 使用
 
@@ -248,6 +261,7 @@ options="{{pickerOptions}}" catch:onConfirm="handlePickerConfirm">
 底部弹窗列表选择器组件 只支持单列选择，当列表累计高度大于 8.5 行时，内部支持滚动条滚动
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-list-picker.jpeg' width="300" />
 
 ### 使用
 
@@ -291,6 +305,7 @@ catch:onConfirm="handleListPickerConfirm">
 底部弹窗多项选择器组件 只支持单列选择，使用复选框形式多项选择，当列表累计高度大于 8.5 行时，内部支持滚动条滚动
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-checkbox-picker.jpeg' width="300" />
 
 ### 使用
 
@@ -333,6 +348,11 @@ lineTextColor="{{common.blackColor}}"  catch:onConfirm="handleCheckboxConfirm">
 底部弹窗日期选择器组件 有两种模式，年月日选择模式和日月选择模式，当为日月选择模式时，默认为平年
 
 ### 演示
+“年月日”模式<br/>
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-date-picker.jpeg' width="300" />
+<br/>
+“月日”模式<br/>
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-date-picker-MD.jpeg' width="300" />
 
 ### 使用
 
@@ -373,6 +393,7 @@ catch:onConfirm="handleTimestampPickerConfirm" catch:onClose="hiddlePickerClose"
 ## 对话框组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-dialog.jpeg' width="300" />
 
 ### 使用
 
@@ -407,6 +428,7 @@ catch:onConfirm="handleAddConfirm" />
 ## 消息提示框组件
 
 ### 演示
+<img src='https://mediab2b.qyer.com/b2b/wakereading/daily-ui/d-notify.jpeg' width="300" />
 
 ### 使用
 

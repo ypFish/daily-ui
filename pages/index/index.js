@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: yp
  * @Date: 2021-04-18 09:42:57
- * @LastEditTime: 2022-04-10 23:00:17
+ * @LastEditTime: 2022-04-11 11:15:33
  * @LastEditors: yp
  */
 // pages/set/set.js
@@ -119,7 +119,18 @@ Component({
     colorType: 0,
     notifyTitle: "通知",
 
-    demo: -1
+    demo: -1,
+
+    //关于组件库
+    businessListOptions: [{
+        title: "项目地址",
+        desc: "github：https://github.com/ypFish/daily-ui"
+      },
+      {
+        title: "联系作者",
+        desc: "wechat：yp-fish"
+      }
+    ],
 
   },
 
@@ -183,14 +194,12 @@ Component({
     },
 
     handleDatePickerConfirm(e) {
-      console.log(e.detail.value)
       this.setData({
         valueTime: e.detail.value
       })
     },
 
     handleDatePickerMDConfirm(e) {
-      console.log(e.detail.value)
       this.setData({
         month: e.detail.value[0],
         day: e.detail.value[1]
@@ -198,7 +207,6 @@ Component({
     },
 
     handleDialogShow() {
-      console.log('弹窗展示')
       this.setData({
         dialogShow: true
       })
@@ -221,14 +229,31 @@ Component({
 
     handleDemoShow(e) {
       const demo = e.currentTarget.dataset.demo ?? -1;
-      console.log('demo', demo)
       this.setData({
         demo: parseInt(demo),
         spread: false
       })
-    }
+    },
 
+    /**
+     * @description: 点击商务合作具体项，复制联系方式
+     * @param {*} e
+     * @return {*}
+     */
+    handleBusinessListConfirm(e) {
 
+      const {
+        businessListOptions
+      } = this.data;
+      const value = e.detail.value
+      if (value >= 0 && value < businessListOptions.length) {
+        let copyValue = businessListOptions[value].desc;
+        copyValue = businessListOptions[value].desc.includes('：') ? businessListOptions[value].desc.split('：')[1] : businessListOptions[value].desc;
+        wx.setClipboardData({
+          data: copyValue
+        })
+      }
+    },
   }
 
 })

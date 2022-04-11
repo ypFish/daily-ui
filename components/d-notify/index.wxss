@@ -3,7 +3,7 @@
   max-width: 690rpx;
   width: 60vw;
   height: 72rpx;
-  top: 100rpx;
+  top: 140rpx;
   margin: auto;
   left: 0;
   right: 0;
@@ -18,7 +18,8 @@
   visibility: hidden;
   transform: translate(0, 0, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 300ms ease 0s,opacity 300ms ease 0s,visibility 300ms ease 0s;
+  transition: transform 300ms ease 0s, opacity 300ms ease 0s,
+    visibility 300ms ease 0s;
 }
 .com-notify .tip-icon {
   width: auto;
@@ -34,7 +35,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #FFF;
+  color: #fff;
   font-size: 26rpx;
   line-height: 36rpx;
   font-weight: bold;

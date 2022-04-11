@@ -93,6 +93,9 @@
 <!-- 对话框组件 -->
 <d-dialog visible="{{dialogShow}}" title="请确认是否提交?" catch:onConfirm="handleDialogConfirm" />
 
+<!-- 关于组件库 -->
+<d-list-picker visible="{{demo===9}}" options="{{businessListOptions}}" title="关于组件库" lineNumber="{{businessListOptions.length}}" catch:onConfirm="handleBusinessListConfirm"></d-list-picker>
+
 <!-- 通知组件 -->
 <d-notify title="{{notifyTitle}}" visible="{{notifyVisible}}" iconType="{{iconType}}" colorType="{{colorType}}" during="2000" />
 
@@ -112,7 +115,7 @@
   <view class="line-box">
     <line title="按钮" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="0" />
     <line title="展开按钮" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="1" />
-    <line title="开关组件" desc="点击当前行列表开关演示" switchShow="{{true}}" />
+    <line title="开关组件" desc="点击当前行列表开关演示" switchShow="{{true}}" switchValue="{{true}}" />
     <line title="底部半页弹窗组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="2" />
     <line title="全页弹窗组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="3" />
     <line title="底部弹窗选择器组件" option="{{pickerOptions[0][pickerValue[0]]+pickerOptions[1][pickerValue[1]]}}" desc="单项多列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="4" />
@@ -122,6 +125,12 @@
     <line title="底部弹窗日期选择器组件" option="{{format.padStartString(month+1,2,'0')}}月{{format.padStartString(day+1,2,'0')}}日" desc="月日模式，去掉2月29日，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="8" />
     <line title="对话框组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDialogShow" />
     <line title="消息提示框组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleNotify" />
+
+    <view class="line"></view>
+
+    <line title="关于组件库" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="9" />
+
+
   </view>
 
 

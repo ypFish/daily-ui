@@ -139,4 +139,11 @@ page {
 .container .line-box {
   width: 100%;
   margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+.container .line-box .line {
+  width: 100%;
+  height: 1rpx;
+  margin: 30rpx 0;
+  background-color: rgba(114, 121, 134, 0.2);
 }
