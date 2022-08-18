@@ -84,6 +84,9 @@
 <!-- 多选组件 -->
 <d-checkbox-picker visible="{{demo===6}}" options="{{chekboxOptions}}" value="{{chekboxValue}}" title="多项选择器" catch:onConfirm="handleCheckboxConfirm"></d-checkbox-picker>
 
+<!-- 顺序多选组件 -->
+<d-orderbox-picker visible="{{demo===10}}" options="{{orderboxOptions}}" value="{{orderboxValue}}" title="顺序多项选择器" catch:onConfirm="handleOrderboxConfirm"></d-orderbox-picker>
+
 <!-- 日期选择器 -->
 <d-date-picker visible="{{demo===7}}" title="年月日" catch:onConfirm="handleDatePickerConfirm" startTime="{{startTime}}" endTime="{{endTime}}" valueTime="{{valueTime}}"></d-date-picker>
 
@@ -121,6 +124,7 @@
     <line title="底部弹窗选择器组件" option="{{pickerOptions[0][pickerValue[0]]+pickerOptions[1][pickerValue[1]]}}" desc="单项多列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="4" />
     <line title="底部弹窗列表选择器组件" option="{{listOptions[listValue].title}}" desc="单项单列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="5" />
     <line title="底部弹窗多项选择器组件" option="{{format.checkboxString(chekboxValue,chekboxOptions)}}" desc="多项单列选择器，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="6" />
+    <line title="底部弹窗顺序多项选择器组件" option="{{format.checkboxString(orderboxValue,chekboxOptions)}}" desc="多项单列选择器，带顺序功能，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="10" />
     <line title="底部弹窗日期选择器组件" option="{{format.dateFormat(valueTime,'yyyy年MM月dd日')}}" desc="年月日模式，支持设定范围，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="7" />
     <line title="底部弹窗日期选择器组件" option="{{format.padStartString(month+1,2,'0')}}月{{format.padStartString(day+1,2,'0')}}日" desc="月日模式，去掉2月29日，点击当前行列表演示" rightIconShow="{{true}}" catch:onTap="handleDemoShow" data-demo="8" />
     <line title="对话框组件" option="演示" rightIconShow="{{true}}" catch:onTap="handleDialogShow" />

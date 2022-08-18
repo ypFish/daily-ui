@@ -1,0 +1,32 @@
+<!--components/d-checkbox-picker/index.wxml-->
+<view class="com-checkbox-picker {{ visible ? 'checkbox-picker-mask-show' : ''}}" catchtouchmove="handleCatchTouchMove" hover-stop-propagation="true" catchtap="onClose">
+
+  <movable-area class="movable-container {{ visible ? 'content-show' : ''}}" catchtap="handleCatchTouchMove" style="top:{{propTopRpx}}rpx">
+    <movable-view damping="30" direction="vertical" class="movable-inner" style="height:{{propHeightRpx}}rpx" y="{{y}}" catchtouchend="toucheEnd" bindchange="dragMove" disabled="{{moveDisable}}">
+      <!-- 标题 -->
+      <view class="header">
+        <!-- 取消按钮 -->
+        <view catchtap="onClose" class="cancel-item" style="color:{{cancelTextColor}}">取消</view>
+        <view class="title">{{title}}</view>
+        <!-- 确认按钮 -->
+        <view catchtap="onConfirm" class="confirm-item" style="color:{{confirmTextColor}}">
+          <iconfont style="visibility:{{loading?'visible':'hidden'}}" name="loadingroll" size="33" color="{{confirmTextColor}}" class="circleAns" />
+          <text style="visibility:{{!loading?'visible':'hidden'}}">确定</text>
+        </view>
+      </view>
+      <!-- 选择器 -->
+      <scroll-view class="check-line-list" scroll-y="true" scroll-anchoring="true" enhanced="{{true}}" show-scrollbar="{{false}}" style="height:{{lineContainerHeightRpx}}rpx;">
+        <view class="check-line" wx:for="{{options}}" wx:key="index" style="height:{{lineHeightRpx}}rpx;" catchtap="lineSelect" data-idx="{{index}}">
+          <view class="check-line-title" style="color:{{lineTextColor}}; line-height:{{lineHeightRpx}}rpx;">
+            {{item.label||item}}
+          </view>
+          <view class="check-box-container" style="border-color:{{resultValue[index]!==undefined?confirmTextColor:'rgba(114,121,134,.4)'}}; background-color:{{resultValue[index]!==undefined?confirmTextColor:'#FFF'}} ">
+            <!-- <iconfont name="fuxuan" size="26" color="#FFF" /> -->
+            <text class="number-text">{{resultValue[index]+1}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </movable-view>
+  </movable-area>
+
+</view>

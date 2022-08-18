@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: yp
  * @Date: 2021-04-18 09:42:57
- * @LastEditTime: 2022-04-11 11:15:33
+ * @LastEditTime: 2022-08-18 15:18:09
  * @LastEditors: yp
  */
 // pages/set/set.js
@@ -88,6 +88,23 @@ Component({
     checkboxPickerShow: false,
     chekboxValue: [1, 3, 4],
     chekboxOptions: [
+      "美国·华盛顿",
+      "英国·伦敦",
+      "法国·巴黎",
+      "土耳其·伊斯坦布尔",
+      "巴西·巴西利亚",
+      "日本·东京",
+      "西班牙·巴塞罗那",
+      "韩国·汉城",
+      "澳大利亚·悉尼",
+      "阿根廷·布宜诺斯艾利斯",
+      "意大利·都灵",
+      "俄罗斯·莫斯科",
+    ],
+
+    orderboxPickerShow: false,
+    orderboxValue: [5, 3, 1, 2],
+    orderboxOptions: [
       "美国·华盛顿",
       "英国·伦敦",
       "法国·巴黎",
@@ -190,6 +207,12 @@ Component({
     handleCheckboxConfirm(e) {
       this.setData({
         chekboxValue: e.detail.value
+      })
+    },
+
+    handleOrderboxConfirm(e) {
+      this.setData({
+        orderboxValue: e.detail.value
       })
     },
 

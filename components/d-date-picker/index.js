@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: yp
  * @Date: 2021-03-08 10:57:31
- * @LastEditTime: 2022-01-07 18:06:50
+ * @LastEditTime: 2022-04-11 16:33:01
  * @LastEditors: yp
  */
 // components/d-coverpage/index.js
@@ -147,7 +147,7 @@ Component({
       const endZeroTime = getZeroDate(new Date(endTime)).getTime();
       if (endZeroTime >= startZeroTime && valueTime >= startZeroTime && valueTime <= endZeroTime && valueTime > 0) {
         if (_lastValueTime !== valueTime) {
-          console.log('valuetime', valueTime)
+          // console.log('valuetime', valueTime)
           this.updateOptionsAndValueByValueTime(valueTime, startZeroTime, endZeroTime);
         }
       }

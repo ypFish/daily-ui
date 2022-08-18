@@ -24,6 +24,8 @@
     "d-button": "./components/d-button/index",
     "d-spread-button": "./components/d-spread-button/index",
     "d-placeholder": "./components/d-placeholder/index",
-    "d-empty": "./components/d-empty/index"
-  }
+    "d-empty": "./components/d-empty/index",
+    "d-orderbox-picker": "./components/d-orderbox-picker/index"
+  },
+  "lazyCodeLoading": "requiredComponents"
 }

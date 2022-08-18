@@ -1,6 +1,4 @@
 {
   "component": true,
-  "usingComponents": {
-    "d-mask": "../d-mask/index"
-  }
+  "usingComponents": {}
 }
